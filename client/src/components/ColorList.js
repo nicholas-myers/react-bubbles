@@ -78,7 +78,17 @@ const ColorList = ({ colors, updateColors }) => {
       code: { hex: newColor.hexValue },
       id: Date.now()
     }
-    updateColors([...colors, addedColor])
+    axiosWithAuth()
+    .post("/api/colors", addedColor)
+    .then(res => {
+      console.log(res)
+      updateColors(res.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+
+    // updateColors([...colors, addedColor])
   }
 
   return (

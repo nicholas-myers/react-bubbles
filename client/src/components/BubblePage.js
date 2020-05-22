@@ -32,7 +32,7 @@ const BubblePage = () => {
 
   return (
     <>
-      <button onClick={logOut}>Logout</button>
+      {/* <button onClick={logOut}>Logout</button> */}
       <>
         <ColorList colors={colorList} updateColors={setColorList} />
         <Bubbles colors={colorList} />
