@@ -54,6 +54,7 @@ const ColorList = ({ colors, updateColors }) => {
           }
         });
 
+
         updateColors([...newColors, res.data]);
         setEditing(false);
         setColorToEdit(initialColor);
