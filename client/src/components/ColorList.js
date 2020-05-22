@@ -1,6 +1,22 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
+
+const NewColorForm = styled.form`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  margin: 0;
+  input {
+    margin: 3% 0;
+  }
+  button {
+    margin-left: 50%;
+    margin-top: 3%;
+  }
+`
 
 const initialColor = {
   color: "",
@@ -67,48 +83,48 @@ const ColorList = ({ colors, updateColors }) => {
   const captureNewColor = (e) => {
     setNewColor({
       ...newColor,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const addNewColor = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const addedColor = {
       color: newColor.colorName,
       code: { hex: newColor.hexValue },
-      id: Date.now()
-    }
+      id: Date.now(),
+    };
     axiosWithAuth()
-    .post("/api/colors", addedColor)
-    .then(res => {
-      console.log(res)
-      updateColors(res.data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      .post("/api/colors", addedColor)
+      .then((res) => {
+        console.log(res);
+        updateColors(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     // updateColors([...colors, addedColor])
-  }
+  };
 
   return (
     <div className="colors-wrap">
       <p>colors</p>
-      <form onSubmit={addNewColor}>
+      <NewColorForm onSubmit={addNewColor}>
         <label htmlFor="colorName">Color Name:</label>
-        <input 
-        name="colorName"
-        value={newColor.colorName}
-        onChange={captureNewColor}
+        <input
+          name="colorName"
+          value={newColor.colorName}
+          onChange={captureNewColor}
         />
         <label htmlFor="hexValue">Hex Value:</label>
-        <input 
-        name="hexValue"
-        value={newColor.hexValue}
-        onChange={captureNewColor}
+        <input
+          name="hexValue"
+          value={newColor.hexValue}
+          onChange={captureNewColor}
         />
         <button>Add Color</button>
-      </form>
+      </NewColorForm>
       <ul>
         {colors.map((color) => (
           <li key={color.color} onClick={() => editColor(color)}>

@@ -56,7 +56,6 @@ const Login = () => {
   return (
     <div>
       <h1>Welcome to the Bubble App!</h1>
-      <p>Build a login page here</p>
       <LoginForm onSubmit={submitLogin}>
         <label htmlFor="username">Username:</label>
         <input 
