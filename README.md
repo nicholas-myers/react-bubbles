@@ -84,8 +84,8 @@ Build a login form to authenticate your users.
 ### Stage 2 - Consuming the API
 
 - [x] When `BubblePages` renders, make a GET request to fetch the color data for your bubbles.
-- [ ] In `ColorList.js`, complete the `saveEdit` and `deleteColor` functions to make AJAX requests to the API to edit/delete data
-- [ ] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
+- [x] In `ColorList.js`, complete the `saveEdit` and `deleteColor` functions to make AJAX requests to the API to edit/delete data
+- [x] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
 
 ### API Documentation
 
@@ -99,7 +99,7 @@ Build a login form to authenticate your users.
 
 **HTTP/Axios Stretch Problems**
 
-- [ ] Build a form at the bottom of `ColorList.js` to add new colors to the colors data
+- [x] Build a form at the bottom of `ColorList.js` to add new colors to the colors data
 
 **Data Visualization**
 
