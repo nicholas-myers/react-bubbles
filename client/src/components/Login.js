@@ -25,8 +25,9 @@ const Login = () => {
     axiosWithAuth()
     .post("/api/login", loginInputs)
     .then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       localStorage.setItem("token", res.data.payload)
+      push("/protected")
     })
     .catch(err => {
       console.log(err)
