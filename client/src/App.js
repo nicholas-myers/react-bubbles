@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import "./styles.scss";
 
 function App() {
+  const [bubbles, setBubbles] = useState([])
   return (
     <Router>
       <div className="App">
