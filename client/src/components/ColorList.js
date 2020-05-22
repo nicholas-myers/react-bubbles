@@ -76,6 +76,7 @@ const ColorList = ({ colors, updateColors }) => {
     const addedColor = {
       color: newColor.colorName,
       code: { hex: newColor.hexValue },
+      id: Date.now()
     }
     updateColors([...colors, addedColor])
   }
